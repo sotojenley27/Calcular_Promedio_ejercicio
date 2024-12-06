@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Promedio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calcular Promedio</h1>
+        <p>Calcular el promedio de una lista de números.</p>
+        <button onclick="calculateAverage()">Ejecutar</button>
+    </div>
+    <script>
+        function calculateAverage() {
+            let input = prompt("Introduce una lista de números separados por comas (e.g., 5,10,15):");
+            if (!input) {
+                alert("Entrada vacía. Inténtalo de nuevo.");
+                return;
+            }
+            let numbers = input.split(",").map(num => parseFloat(num.trim()));
+            if (numbers.some(isNaN)) {
+                alert("Por favor, asegúrate de introducir solo números.");
+                return;
+            }
+            let sum = numbers.reduce((acc, num) => acc + num, 0);
+            let average = sum / numbers.length;
+            alert("El promedio de los números es: " + average.toFixed(2));
+        }
+    </script>
+</body>
+</html>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
